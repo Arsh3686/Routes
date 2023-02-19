@@ -1,0 +1,124 @@
+nav {
+	position: sticky;
+	top: 0;
+	padding: 25px 0;
+	border-bottom-right-radius: 48px;
+	border-bottom-left-radius: 48px;
+	box-shadow: 2px 2px 12px 6px rgb(89, 106, 255, 0.8);
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	font-weight: 500;
+	background-color: #fff;
+	z-index: 10000;
+}
+.burger {
+	display: none;
+}
+.line {
+	width: 20px;
+	margin: 2px;
+	background-color: #000;
+	height: 2px;
+}
+nav a {
+	margin-left: 20px;
+	padding: 0 10px;
+}
+nav button {
+	border: 0;
+	padding: 10px 20px;
+	border-radius: 10px;
+	cursor: pointer;
+	background-color: #2a4ed6;
+	color: #fff;
+	transition: background-color 0.2s ease-in-out;
+	/* transition: color 0.2s ease-in-out; */
+	font-weight: 700;
+	font-size: 16px;
+}
+nav button:hover {
+	background-color: #fff;
+	color: #000;
+}
+.buttonContainer {
+	display: flex;
+	align-items: center;
+}
+.burger {
+	cursor: pointer;
+	padding-left: 10px;
+}
+.descTitle {
+	margin: 80px 0;
+	font-size: 50px;
+	text-align: center;
+	color: rgb(89, 106, 255);
+}
+.dropDown {
+	display: none;
+}
+.service:hover > .dropDown {
+	display: block;
+}
+.projectBox {
+	width: 381px;
+	position: relative;
+	height: 320px;
+	background-color: #a8b8ff;
+	display: flex;
+	/* justify-content: center; */
+	align-items: center;
+	border-radius: 8px;
+	flex-direction: column;
+	transition: transform 0.3s ease-in-out;
+	cursor: pointer;
+}
+.projectBox:hover {
+	transform: scale(1.12);
+}
+.projectBox img {
+	transform: translateY(-20px);
+	width: 90%;
+	height: 60%;
+	border-radius: 8px;
+}
+.projectsCollection {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	gap: 50px;
+	margin: 90px 0;
+}
+.projectBox h5 {
+	position: absolute;
+	bottom: 20px;
+}
+.footer {
+	height: 380px;
+	display: flex;
+	/* flex-direction: column; */
+	padding-top: 20px;
+	justify-content: space-around;
+	background-color: #18263b;
+	padding-left: 170px;
+	padding-bottom: 50px;
+}
+.footerPadding {
+	width: 50vw;
+	/* background-color: aquamarine; */
+	display: flex;
+	justify-content: space-around;
+}
+@media (max-width: 840px) {
+	.navButton {
+		display: none;
+	}
+	nav {
+		padding: 25px 20px;
+		/* width: 80vw; */
+	}
+	.burger {
+		display: block;
+	}
+}
