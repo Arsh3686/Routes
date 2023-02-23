@@ -1,10 +1,13 @@
 import "./App.css";
-import Home from "./components/Home";
+import Card from "./components/Card";
+import Data from "./components/Data";
 function App() {
 	return (
-		<>
-			<Home />
-		</>
+		<div className="Container">
+			{Data.map((e) => (
+				<Card item={e} />
+			))}
+		</div>
 	);
 }
 
