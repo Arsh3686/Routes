@@ -1,8 +1,14 @@
 import "./App.css";
 import Card from "./components/Card";
-import Data from "./components/Data";
+import Data from "./Data";
 function App() {
-	return <Card />;
+	return (
+		<div className="main">
+			{Data.map((e) => {
+				return <Card e={e} />;
+			})}
+		</div>
+	);
 }
 
 export default App;

@@ -3,6 +3,17 @@
 	margin: 0;
 	box-sizing: border-box;
 	font-family: sans-serif;
+	color: #fff;
+}
+.main {
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	padding-top: 50px;
+	background-color: #0d0d0c;
+
+	/* align-items: center; */
 }
 .dpimg {
 	width: 140px;
@@ -13,19 +24,26 @@
 	height: 100%;
 	border-radius: 6px;
 }
+.ac {
+	color: #7aace3;
+}
 .card {
-	width: 90vw;
-	height: 300px;
-	background-color: burlywood;
+	margin-bottom: 80px;
+	width: 70vw;
+	min-width: 600px;
+	height: 350px;
+	background-color: #0d0d0c;
 	display: flex;
+	border-radius: 10px;
+	box-shadow: 0px 0px 22px -5px rgb(174, 55, 55, 0.8);
 }
 .cardDetails {
 	padding-top: 10px;
-	width: 50%;
+	width: 60%;
 	height: 100%;
 }
 .img {
-	width: 50%;
+	width: 40%;
 	height: 100%;
 }
 .img > img {
@@ -35,11 +53,26 @@
 .card > p {
 	margin-top: 10px;
 }
+button {
+	background-color: transparent;
+
+	border: 1px solid #fff;
+	border-radius: 7px;
+	padding: 5px 15px;
+}
+.gap {
+	margin: 8px 0;
+}
 .DetailsPart {
 	display: flex;
 	align-items: center;
-	justify-content: space-around;
+	padding: 10px 20px;
+	/* justify-content: space-around; */
+}
+.detailsPart_data {
+	font-size: 18px;
+	padding: 20px;
 }
 .descDetailsPart {
-	padding-top: 30px;
+	padding: 30px 20px;
 }
