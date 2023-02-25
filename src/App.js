@@ -1,22 +1,14 @@
 import { useState } from "react";
 import "./App.css";
 import Content from "./components/Content";
-import Header from "./components/Header";
+import Data from "./Data";
 function App() {
-	const [mode, setMode] = useState(false);
-	const update = () => {
-		setMode(!mode);
-	};
-	// const
+	const [arr] = useState(Data);
 	return (
-		<div
-			className="main"
-			style={{
-				backgroundColor: mode === true ? "black" : "white",
-				color: mode === true ? "white" : "black",
-			}}>
-			<Header update={update} mode={mode} />
-			<Content />
+		<div className="main">
+			{arr.map((e) => {
+				return <Content e={e} key={e} />;
+			})}
 		</div>
 	);
 }
