@@ -1,14 +1,11 @@
-import { useState } from "react";
+import Header from "./components/Headers/Header";
 import "./App.css";
-import Content from "./components/Content";
-import Data from "./Data";
+import Landing from "./components/Landing/Landing";
 function App() {
-	const [arr] = useState(Data);
 	return (
 		<div className="main">
-			{arr.map((e) => {
-				return <Content e={e} key={e} />;
-			})}
+			<Header />
+			<Landing />
 		</div>
 	);
 }
