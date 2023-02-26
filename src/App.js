@@ -1,11 +1,21 @@
-import Header from "./components/Headers/Header";
 import "./App.css";
-import Landing from "./components/Landing/Landing";
+import { ReactMarkdown } from "react-markdown/lib/react-markdown";
+
+import { useState } from "react";
 function App() {
+	const [mark, setMark] = useState("");
+	const handleMark = (e) => {
+		setMark(e.target.value);
+	};
 	return (
 		<div className="main">
-			<Header />
-			<Landing />
+			<textarea
+				cols={100}
+				rows={100}
+				onChange={handleMark}
+				value={mark}
+			/>
+			<ReactMarkdown className="mm" children={mark}></ReactMarkdown>
 		</div>
 	);
 }
