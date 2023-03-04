@@ -1,47 +1,54 @@
 import "./App.css";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-
-import { createContext, useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Main from "./components/Main";
-import Nav from "./components/Nav";
-import Store from "./Store";
-export const Context = createContext(Store);
-function App() {
-	const ctx = useContext(Context);
-	const [toggler, setToggler] = useState(false);
-	const { toggle, color } = ctx;
-	const toggles = () => {
-		setToggler(!toggler);
-	};
-	useEffect(() => {
-		ctx.toggle = toggler ? "white" : "black";
-		ctx.color = toggler ? "black" : `#6AD5B1`;
-	}, [toggler]);
+import API_ENDPOINT, { API_ID, API_KEY } from "../src/Store";
 
+function App() {
+	const [collector, setCollectore] = useState([]);
+	const [inputCollector, setInputCollector] = useState("");
+	const [queryCollector, querySetter] = useState("");
+
+	useEffect(() => {
+		const fetchFun = async () => {
+			const { hits } = await (
+				await fetch(
+					`https://api.edamam.com/api/recipes/v2?type=public&q=${queryCollector}&app_id=${API_ID}&app_key=${API_KEY}`
+				)
+			).json();
+			setCollectore([...hits]);
+		};
+		fetchFun();
+	}, [queryCollector]);
+	const submit = () => {
+		querySetter(inputCollector);
+		setInputCollector("");
+	};
 	return (
-		<Context.Provider value={Store}>
-			<div
-				style={{
-					backgroundColor: `${toggle}`,
-					color: `${color}`,
-				}}>
-				<Router>
-					<Nav />
-					<Routes>
-						<Route
-							path="/"
-							element={
-								<Main
-									toggles={toggles}
-									toggle={toggle}
-									color={color}
-								/>
-							}
-						/>
-					</Routes>{" "}
-				</Router>
-			</div>
-		</Context.Provider>
+		<>
+			<input
+				value={inputCollector}
+				onChange={(e) => setInputCollector(e.target.value)}
+				placeholder="Search your recipie"
+			/>
+			<button onClick={submit}>Submit</button>
+			<hr />
+			<ul style={{ display: "flex", flexWrap: "wrap", width: "100vw" }}>
+				{collector.map((e) => {
+					return (
+						<div
+							style={{
+								display: "flex",
+								flexDirection: "column",
+								alignItems: "center",
+								width: "300px",
+							}}>
+							<img width={100} src={e.recipe.image} alt="" />
+							<p>Recipe_Name: {e.recipe.label}</p>
+						</div>
+					);
+				})}
+			</ul>
+		</>
 	);
 }
 
