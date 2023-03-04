@@ -1,3 +1,26 @@
 .link {
 	color: inherit;
 }
+* {
+	text-align: center;
+}
+input,
+button {
+	padding: 6px 30px;
+}
+input {
+	width: 300px;
+	margin-bottom: 20px;
+}
+.hooked {
+	margin-bottom: 20px;
+	background-color: black;
+	width: 100vw;
+	height: 50px;
+	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 30px;
+	font-weight: 800;
+}
