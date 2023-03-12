@@ -3,7 +3,7 @@ import "./style/Project.css";
 const Project = () => {
 	return (
 		<div className="project">
-			<img src="images/Project.jpg" alt="" />
+			<img src="./images/Project.jpg" alt="" />
 		</div>
 	);
 };
