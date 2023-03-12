@@ -1,7 +1,10 @@
-import React from "react";
+import "./style/About.css";
 
 const About = () => {
-	return <div>About</div>;
+	return (
+		<div className="about">
+			<img src="images/About.jpg" alt="" />
+		</div>
+	);
 };
-
 export default About;
